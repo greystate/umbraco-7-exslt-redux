@@ -220,10 +220,10 @@ namespace umbraco.presentation.xslt.Exslt
 
 			Regex regex = new Regex(regexp, options); 
 		
-			if(flags.IndexOf("g")!= -1){
-				return regex.Replace(input, replacement, 1); 
-			}else{
+			if(flags.IndexOf("g") >= 0){
 				return regex.Replace(input, replacement); 
+			}else{
+				return regex.Replace(input, replacement, 1); 
 			}
 		}
 	}
